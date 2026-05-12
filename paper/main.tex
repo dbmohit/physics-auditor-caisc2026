@@ -54,6 +54,7 @@ are structural blind spots for LLM reviewers, each yielding 0\% detection rate.
 All violation scores are auto-computable from the released dataset;
 any reviewer can re-run the Physics Auditor on the 40 test outputs and
 reproduce Table~\ref{tab:main} in under two minutes on a standard laptop.
+Code and data: \url{https://github.com/dbmohit/physics-auditor-caisc2026}.
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -105,7 +106,8 @@ Our contributions are:
     (mass non-conservation: 0\% recall; PDE residual error: 0\% recall).
   \item The Physics Auditor agent: a single-file, CPU-only, 0.11-second
     post-hoc verification tool that any AI scientist pipeline can call on its
-    own outputs.
+    own outputs. Code and data are publicly available at
+    \url{https://github.com/dbmohit/physics-auditor-caisc2026}.
 \end{enumerate}
 
 This paper was itself produced by an AI agent team
