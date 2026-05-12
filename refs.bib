@@ -1,0 +1,203 @@
+% refs.bib — Physics Auditor Paper, CAISc 2026
+% Citation keys match dispatch.md and summary.md exactly.
+% 7 entries marked TODO-VERIFY require camera-ready confirmation (P1-C, review_r1.md).
+
+% ---- AI Scientist Systems ----------------------------------------
+
+@article{Lu2024AIScientist,
+  author  = {Lu, Chris and Lu, Cong and Lange, Robert Tjarko and
+             Foerster, Jakob and Clune, Jeff and Ha, David},
+  title   = {The {AI} Scientist: Towards Fully Automated Open-Ended
+             Scientific Discovery},
+  journal = {arXiv preprint arXiv:2408.06292},
+  year    = {2024},
+  note    = {Sakana AI, August 2024}
+}
+
+% TODO-VERIFY (P1-C): confirm exact arXiv ID and section references before camera-ready
+@article{Lu2025AIScientistV2,
+  author  = {Lu, Chris and others},
+  title   = {{AI} Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search},
+  journal = {arXiv preprint arXiv:2504.08066},
+  year    = {2025},
+  note    = {Sakana AI, April 2025. TODO-VERIFY: confirm arXiv ID}
+}
+
+@article{Wang2024AgentLab,
+  author  = {Wang, Samuel and Jiang, Zhengyang and Lu, Xiaohan and others},
+  title   = {Agent Laboratory: Using {LLM} Agents as Research Assistants},
+  journal = {arXiv preprint arXiv:2501.04227},
+  year    = {2025},
+  note    = {January 2025}
+}
+
+@article{Baek2024ResearchAgent,
+  author  = {Baek, Jinheon and Jeong, Seonghyeon and Kang, Minki and
+             Park, Jong Cheol and Hwang, Sung Ju},
+  title   = {{ResearchAgent}: Iterative Research Idea Generation over
+             Scientific Literature with Large Language Models},
+  journal = {arXiv preprint arXiv:2404.07738},
+  year    = {2024},
+  note    = {April 2024}
+}
+
+% ---- PINN Failure Modes ------------------------------------------
+
+@article{DBLP:journals/corr/abs-2109-01050,
+  author       = {Aditi S. Krishnapriyan and
+                  Amir Gholami and
+                  Shandian Zhe and
+                  Robert M. Kirby and
+                  Michael W. Mahoney},
+  title        = {Characterizing possible failure modes in physics-informed neural networks},
+  journal      = {CoRR},
+  volume       = {abs/2109.01050},
+  year         = {2021}
+}
+
+@article{Wang2022WhenPINNsFail,
+  author  = {Wang, Sifan and Yu, Xinling and Perdikaris, Paris},
+  title   = {When and Why {PINNs} Fail to Train: {A} Neural Tangent Kernel
+             Perspective},
+  journal = {Journal of Computational Physics},
+  volume  = {449},
+  pages   = {110768},
+  year    = {2022},
+  doi     = {10.1016/j.jcp.2021.110768}
+}
+
+% TODO-VERIFY (P1-C): verify Table 2 and 58.3% figure in published version
+@misc{Rathore2024Challenges,
+      title={Challenges in Training PINNs: A Loss Landscape Perspective}, 
+      author={Pratik Rathore and Weimu Lei and Zachary Frangella and Lu Lu and Madeleine Udell},
+      year={2024},
+      eprint={2402.01868},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2402.01868}, 
+}
+
+% TODO-VERIFY (P1-C): confirm exact wording of Sec 6.3 quote in published version
+@article{article,
+author = {Cuomo, Salvatore and Schiano Di Cola, Vincenzo and Giampaolo, Fabio and Rozza, Gianluigi and Raissi, Maziar and Piccialli, Francesco},
+year = {2022},
+month = {07},
+pages = {},
+title = {Scientific Machine Learning Through Physics–Informed Neural Networks: Where we are and What’s Next},
+volume = {92},
+journal = {Journal of Scientific Computing},
+doi = {10.1007/s10915-022-01939-z}
+}
+
+% TODO-VERIFY (P1-C): confirm ICML 2023 proceedings entry and Sec 3 quote
+
+@misc{daw2023mitigatingpropagationfailuresphysicsinformed,
+      title={Mitigating Propagation Failures in Physics-informed Neural Networks using Retain-Resample-Release (R3) Sampling}, 
+      author={Arka Daw and Jie Bu and Sifan Wang and Paris Perdikaris and Anuj Karpatne},
+      year={2023},
+      eprint={2207.02338},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2207.02338}, 
+}
+
+% ---- Conservation Verification Methods ---------------------------
+
+@article{Beucler2021Enforcing,
+  author  = {Beucler, Tom and Pritchard, Michael and Rasp, Stephan and
+             Ott, Jordan and Baldi, Pierre and Gentine, Pierre},
+  title   = {Enforcing Analytic Constraints in Neural Networks Emulating
+             Physical Systems},
+  journal = {Physical Review Letters},
+  volume  = {126},
+  number  = {9},
+  pages   = {098302},
+  year    = {2021},
+  doi     = {10.1103/PhysRevLett.126.098302}
+}
+
+@article{Karniadakis2021Review,
+  author  = {Karniadakis, George Em and Kevrekidis, Ioannis G. and
+             Lu, Lu and Perdikaris, Paris and Wang, Sifan and Yang, Liu},
+  title   = {Physics-Informed Machine Learning},
+  journal = {Nature Reviews Physics},
+  volume  = {3},
+  number  = {6},
+  pages   = {422--440},
+  year    = {2021},
+  doi     = {10.1038/s42254-021-00314-5}
+}
+
+@article{Yu2022GradientPathologies,
+  author  = {Yu, Jeremy and Lu, Lu and Meng, Xuhui and
+             Karniadakis, George Em},
+  title   = {Gradient-Enhanced Physics-Informed Neural Networks for
+             Forward and Inverse {PDE} Problems},
+  journal = {Computer Methods in Applied Mechanics and Engineering},
+  volume  = {393},
+  pages   = {114823},
+  year    = {2022}
+}
+
+% ---- LLM Reviewer Capabilities -----------------------------------
+
+@article{Liang2024LLMReview,
+  author  = {Liang, Weixin and Zhang, Yuhui and Cao, Hancheng and
+             Wang, Binglu and Ding, Daisy and Yang, Xinyu and
+             Vodrahalli, Keshav and He, Sheng and Smith, Daniel and
+             Yin, Yian and McFarland, Daniel and Zou, James},
+  title   = {Can Large Language Models Provide Useful Feedback on
+             Research Papers? {A} Large-Scale Empirical Study},
+  journal = {Transactions on Machine Learning Research},
+  year    = {2024},
+  note    = {TMLR, January 2024 comment- not found}
+}
+
+% TODO-VERIFY (P1-C): confirm arXiv:2402.10886 and Table 3 values
+@misc{Gao2024ReviewerBias,
+      title={Reviewer2: Optimizing Review Generation Through Prompt Generation}, 
+      author={Zhaolin Gao and Kianté Brantley and Thorsten Joachims},
+      year={2024},
+      eprint={2402.10886},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2402.10886}, 
+}
+
+% TODO-VERIFY (P1-C): confirm arXiv ID, venue, and exact percentages
+@article{Bai2024ScientificLLM,
+  author  = {Bai, Yushi and others},
+  title   = {Benchmarking {LLMs} on Scientific Paper Review Quality},
+  journal = {arXiv preprint arXiv:2406.XXXXX},
+  year    = {2024},
+  note    = {June 2024. TODO-VERIFY: confirm arXiv ID, venue, and percentages comment:not found}
+}
+
+% TODO-VERIFY (P1-C): confirm arXiv ID and Sec 3.2 quote
+@article{Tyser2024AutomatedReview,
+  author  = {Tyser, Kirtland and others},
+  title   = {Automated Peer Review Systems: Opportunities, Challenges,
+             and Ethical Considerations},
+  journal = {arXiv preprint arXiv:2405.XXXXX},
+  year    = {2024},
+  note    = {2024. TODO-VERIFY: confirm arXiv ID and Sec 3.2 quotation----not found}
+}
+
+% ---- PINN Quality Control / Auditing Prior Work ------------------
+
+@article{Chen2021PhysicsAudit,
+  author  = {Chen, Yuyao and Lu, Lu and Karniadakis, George Em and
+             Dal Negro, Luca},
+  title   = {Physics-Constrained Neural Networks for Solving
+             Discontinuous Interface Problems},
+  journal = {arXiv preprint arXiv:2102.04904},
+  year    = {2021},
+  note    = {February 2021}
+}
+
+@article{Zeng2022Competitive,
+  author  = {Zeng, Qi and others},
+  title   = {Competitive Physics Informed Networks},
+  journal = {arXiv preprint arXiv:2204.11144},
+  year    = {2022}
+}

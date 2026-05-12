@@ -1,0 +1,2328 @@
+{
+  "metadata": {
+    "auditor_version": "1.0",
+    "epsilon_mass": 0.05,
+    "epsilon_energy": 0.05,
+    "epsilon_bc": 0.1,
+    "epsilon_pde": 0.05,
+    "epsilon_positivity": -0.01,
+    "epsilon_symmetry": 0.01,
+    "n_outputs": 40,
+    "date": "2026-05-10",
+    "runtime_seconds": 0.112
+  },
+  "overall_metrics": {
+    "auditor": {
+      "tp": 32,
+      "fp": 0,
+      "fn": 0,
+      "tn": 8,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "recall_ci_95": [
+        0.8928,
+        1.0,
+        0.9464
+      ],
+      "precision_ci_95": [
+        0.8928,
+        1.0,
+        0.9464
+      ]
+    },
+    "baseline_llm": {
+      "tp": 15,
+      "fp": 0,
+      "fn": 17,
+      "tn": 8,
+      "precision": 1.0,
+      "recall": 0.4688,
+      "f1": 0.6383,
+      "recall_ci_95": [
+        0.3087,
+        0.6355,
+        0.4721
+      ],
+      "precision_ci_95": [
+        0.7961,
+        1.0,
+        0.8981
+      ]
+    },
+    "recall_gap": 0.5312,
+    "mcnemar_test": {
+      "b": 17,
+      "c": 0,
+      "statistic": 15.0588,
+      "p_value": 0.000104,
+      "significant": true
+    }
+  },
+  "per_type_metrics": {
+    "none": {
+      "n": 8,
+      "auditor_fp": 0,
+      "baseline_fp": 0,
+      "auditor_fp_rate": 0.0,
+      "baseline_fp_rate": 0.0,
+      "auditor_fp_ci": [
+        0.0,
+        0.3244,
+        0.1622
+      ],
+      "baseline_fp_ci": [
+        0.0,
+        0.3244,
+        0.1622
+      ]
+    },
+    "mass_violation": {
+      "n": 8,
+      "auditor_detected": 8,
+      "baseline_detected": 0,
+      "auditor_recall": 1.0,
+      "baseline_recall": 0.0,
+      "auditor_recall_ci": [
+        0.6756,
+        1.0,
+        0.8378
+      ],
+      "baseline_recall_ci": [
+        0.0,
+        0.3244,
+        0.1622
+      ]
+    },
+    "bc_drift": {
+      "n": 8,
+      "auditor_detected": 8,
+      "baseline_detected": 8,
+      "auditor_recall": 1.0,
+      "baseline_recall": 1.0,
+      "auditor_recall_ci": [
+        0.6756,
+        1.0,
+        0.8378
+      ],
+      "baseline_recall_ci": [
+        0.6756,
+        1.0,
+        0.8378
+      ]
+    },
+    "pde_residual": {
+      "n": 8,
+      "auditor_detected": 8,
+      "baseline_detected": 0,
+      "auditor_recall": 1.0,
+      "baseline_recall": 0.0,
+      "auditor_recall_ci": [
+        0.6756,
+        1.0,
+        0.8378
+      ],
+      "baseline_recall_ci": [
+        0.0,
+        0.3244,
+        0.1622
+      ]
+    },
+    "positivity": {
+      "n": 4,
+      "auditor_detected": 4,
+      "baseline_detected": 3,
+      "auditor_recall": 1.0,
+      "baseline_recall": 0.75,
+      "auditor_recall_ci": [
+        0.5101,
+        1.0,
+        0.7551
+      ],
+      "baseline_recall_ci": [
+        0.3006,
+        0.9544,
+        0.6275
+      ]
+    },
+    "compound": {
+      "n": 4,
+      "auditor_detected": 4,
+      "baseline_detected": 4,
+      "auditor_recall": 1.0,
+      "baseline_recall": 1.0,
+      "auditor_recall_ci": [
+        0.5101,
+        1.0,
+        0.7551
+      ],
+      "baseline_recall_ci": [
+        0.5101,
+        1.0,
+        0.7551
+      ]
+    }
+  },
+  "results": {
+    "output_000": {
+      "overall_pass": true,
+      "violation_score": 0.310363,
+      "predicted_violation_type": "none",
+      "n_violations_detected": 0,
+      "ground_truth_type": "none",
+      "ground_truth_violated": false,
+      "auditor_detected": false,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": false,
+          "max_relative_error": 0.0003540259842303677,
+          "epsilon": 0.05,
+          "score": 0.007080519542996963,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.0005152027821479752,
+          "max_residual_left": 0.0005152027821479752,
+          "max_residual_right": 0.0004604035555289995,
+          "epsilon": 0.1,
+          "score": 0.005152027769959474
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.02560348027823635,
+          "mean_abs_residual": 0.1253206663711225,
+          "epsilon": 0.05,
+          "score": 0.5120695953233351
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.0004604035555289995,
+          "negative_fraction": 0.015625,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.0001898033675640466,
+          "epsilon": 0.01,
+          "score": 0.018980334858371174
+        }
+      },
+      "baseline_confidence": 0.0274,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_001": {
+      "overall_pass": true,
+      "violation_score": 0.198698,
+      "predicted_violation_type": "none",
+      "n_violations_detected": 0,
+      "ground_truth_type": "none",
+      "ground_truth_violated": false,
+      "auditor_detected": false,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": false,
+          "max_relative_error": 0.00033650731724985155,
+          "epsilon": 0.05,
+          "score": 0.006730146210394106,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.000320597217439331,
+          "max_residual_left": 0.000320597217439331,
+          "max_residual_right": 0.00031970783495665803,
+          "epsilon": 0.1,
+          "score": 0.0032059721423335886
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.016347244733485238,
+          "mean_abs_residual": 0.1031814245068278,
+          "epsilon": 0.05,
+          "score": 0.32694488813080697
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.00031970783495665803,
+          "negative_fraction": 0.01484375,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.00015374955456031705,
+          "epsilon": 0.01,
+          "score": 0.015374953918536315
+        }
+      },
+      "baseline_confidence": 0.0,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_002": {
+      "overall_pass": true,
+      "violation_score": 0.3165,
+      "predicted_violation_type": "none",
+      "n_violations_detected": 0,
+      "ground_truth_type": "none",
+      "ground_truth_violated": false,
+      "auditor_detected": false,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": false,
+          "max_relative_error": 0.0003365484753776706,
+          "epsilon": 0.05,
+          "score": 0.006730969372934024,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.0005285994770427797,
+          "max_residual_left": 0.0005285994770427797,
+          "max_residual_right": 0.00048771519931081053,
+          "epsilon": 0.1,
+          "score": 0.005285994717567849
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.02611715493803695,
+          "mean_abs_residual": 0.12805531829959527,
+          "epsilon": 0.05,
+          "score": 0.5223430883138772
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.0004587936066834505,
+          "negative_fraction": 0.014375,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.00018929434086491763,
+          "epsilon": 0.01,
+          "score": 0.018929432193548545
+        }
+      },
+      "baseline_confidence": 0.0359,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_003": {
+      "overall_pass": true,
+      "violation_score": 0.066461,
+      "predicted_violation_type": "none",
+      "n_violations_detected": 0,
+      "ground_truth_type": "none",
+      "ground_truth_violated": false,
+      "auditor_detected": false,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": false,
+          "max_relative_error": 0.00026937940474130464,
+          "epsilon": 0.05,
+          "score": 0.005387587987074333,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.0002261200272347212,
+          "max_residual_left": 0.0002261200272347212,
+          "max_residual_right": 0.00022306244490821557,
+          "epsilon": 0.1,
+          "score": 0.002261200249735209
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.005404518807680959,
+          "mean_abs_residual": 0.05962349522477968,
+          "epsilon": 0.05,
+          "score": 0.10809037399181169
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.00016820837660201112,
+          "negative_fraction": 0.01375,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 8.421471289325904e-05,
+          "epsilon": 0.01,
+          "score": 0.008421470447178859
+        }
+      },
+      "baseline_confidence": 0.0197,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_004": {
+      "overall_pass": true,
+      "violation_score": 0.396721,
+      "predicted_violation_type": "none",
+      "n_violations_detected": 0,
+      "ground_truth_type": "none",
+      "ground_truth_violated": false,
+      "auditor_detected": false,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": false,
+          "max_relative_error": 0.00039942855156701137,
+          "epsilon": 0.05,
+          "score": 0.007988570871568809,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.0004927133677106787,
+          "max_residual_left": 0.0004309494757059192,
+          "max_residual_right": 0.0004927133677106787,
+          "epsilon": 0.1,
+          "score": 0.0049271336278354505
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.032777966275622676,
+          "mean_abs_residual": 0.14380819777911516,
+          "epsilon": 0.05,
+          "score": 0.6555593124012672
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.00043331177527024343,
+          "negative_fraction": 0.015,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.000209354562799628,
+          "epsilon": 0.01,
+          "score": 0.02093545418641738
+        }
+      },
+      "baseline_confidence": 0.0,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_005": {
+      "overall_pass": true,
+      "violation_score": 0.105847,
+      "predicted_violation_type": "none",
+      "n_violations_detected": 0,
+      "ground_truth_type": "none",
+      "ground_truth_violated": false,
+      "auditor_detected": false,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": false,
+          "max_relative_error": 0.00029855379609862757,
+          "epsilon": 0.05,
+          "score": 0.005971075802551035,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.00030103241634199144,
+          "max_residual_left": 0.00030103241634199144,
+          "max_residual_right": 0.00027460567993044,
+          "epsilon": 0.1,
+          "score": 0.003010324133316673
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.008645787716503048,
+          "mean_abs_residual": 0.07466946752945619,
+          "epsilon": 0.05,
+          "score": 0.17291575087174593
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.00030103241634199144,
+          "negative_fraction": 0.0171875,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.00011992389861620256,
+          "epsilon": 0.01,
+          "score": 0.01199238866238139
+        }
+      },
+      "baseline_confidence": 0.0476,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_006": {
+      "overall_pass": true,
+      "violation_score": 0.22435,
+      "predicted_violation_type": "none",
+      "n_violations_detected": 0,
+      "ground_truth_type": "none",
+      "ground_truth_violated": false,
+      "auditor_detected": false,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": false,
+          "max_relative_error": 0.00030915828573937023,
+          "epsilon": 0.05,
+          "score": 0.006183165591124092,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.00037790714985894575,
+          "max_residual_left": 0.00031015005355927483,
+          "max_residual_right": 0.00037790714985894575,
+          "epsilon": 0.1,
+          "score": 0.0037790714607987426
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.018478206402964367,
+          "mean_abs_residual": 0.10840441407311899,
+          "epsilon": 0.05,
+          "score": 0.3695641206680049
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.00037790714985894575,
+          "negative_fraction": 0.01734375,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.00016152415769918967,
+          "epsilon": 0.01,
+          "score": 0.016152414154677552
+        }
+      },
+      "baseline_confidence": 0.0261,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_007": {
+      "overall_pass": true,
+      "violation_score": 0.04644,
+      "predicted_violation_type": "none",
+      "n_violations_detected": 0,
+      "ground_truth_type": "none",
+      "ground_truth_violated": false,
+      "auditor_detected": false,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": false,
+          "max_relative_error": 0.00027645919540382556,
+          "epsilon": 0.05,
+          "score": 0.005529183797492835,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.00019111795840472408,
+          "max_residual_left": 0.0001700380098121073,
+          "max_residual_right": 0.00019111795840472408,
+          "epsilon": 0.1,
+          "score": 0.001911179564935445
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.003751983247575571,
+          "mean_abs_residual": 0.04961479301170644,
+          "epsilon": 0.05,
+          "score": 0.07503966345071815
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.00019111795840472408,
+          "negative_fraction": 0.01484375,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 6.726065232440907e-05,
+          "epsilon": 0.01,
+          "score": 0.006726064559834451
+        }
+      },
+      "baseline_confidence": 0.0286,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_008": {
+      "overall_pass": false,
+      "violation_score": 0.627991,
+      "predicted_violation_type": "mass_violation",
+      "n_violations_detected": 1,
+      "ground_truth_type": "mass_violation",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.12085423345211888,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.00033881384929566226,
+          "max_residual_left": 0.00033881384929566226,
+          "max_residual_right": 0.0003167926331753289,
+          "epsilon": 0.1,
+          "score": 0.003388138459075238
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.013234249515709243,
+          "mean_abs_residual": 0.09024862513331396,
+          "epsilon": 0.05,
+          "score": 0.26468498502048515
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.00033881384929566226,
+          "negative_fraction": 0.0134375,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.00011833250214747224,
+          "epsilon": 0.01,
+          "score": 0.01183324903142232
+        }
+      },
+      "baseline_confidence": 0.0,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_009": {
+      "overall_pass": false,
+      "violation_score": 0.624121,
+      "predicted_violation_type": "mass_violation",
+      "n_violations_detected": 1,
+      "ground_truth_type": "mass_violation",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.08535219403543659,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.00032352926586478014,
+          "max_residual_left": 0.00032352926586478014,
+          "max_residual_right": 0.00022690301057387923,
+          "epsilon": 0.1,
+          "score": 0.003235292626294875
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.011303426695875838,
+          "mean_abs_residual": 0.08737375367746622,
+          "epsilon": 0.05,
+          "score": 0.22606852939614616
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.000292748673068088,
+          "negative_fraction": 0.01734375,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.00011905341871727124,
+          "epsilon": 0.01,
+          "score": 0.011905340681193055
+        }
+      },
+      "baseline_confidence": 0.0,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_010": {
+      "overall_pass": false,
+      "violation_score": 0.625104,
+      "predicted_violation_type": "mass_violation",
+      "n_violations_detected": 1,
+      "ground_truth_type": "mass_violation",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.10539478680898681,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.0003199555689109783,
+          "max_residual_left": 0.0003199555689109783,
+          "max_residual_right": 0.0002836932968942624,
+          "epsilon": 0.1,
+          "score": 0.003199555657114226
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.011791651815052309,
+          "mean_abs_residual": 0.08588550498447717,
+          "epsilon": 0.05,
+          "score": 0.23583303158438554
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.0002715062451761858,
+          "negative_fraction": 0.01515625,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.00012011844108920897,
+          "epsilon": 0.01,
+          "score": 0.012011842907736606
+        }
+      },
+      "baseline_confidence": 0.0,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_011": {
+      "overall_pass": false,
+      "violation_score": 0.628425,
+      "predicted_violation_type": "mass_violation",
+      "n_violations_detected": 1,
+      "ground_truth_type": "mass_violation",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.1018455059146735,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.000285367566791887,
+          "max_residual_left": 0.0002849710119015205,
+          "max_residual_right": 0.000285367566791887,
+          "epsilon": 0.1,
+          "score": 0.002853675639382113
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.01347982703096845,
+          "mean_abs_residual": 0.09354429376199658,
+          "epsilon": 0.05,
+          "score": 0.26959653522743826
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.0002406695277627864,
+          "negative_fraction": 0.0159375,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.00011802678583987168,
+          "epsilon": 0.01,
+          "score": 0.011802677403719427
+        }
+      },
+      "baseline_confidence": 0.0427,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_012": {
+      "overall_pass": false,
+      "violation_score": 0.626219,
+      "predicted_violation_type": "mass_violation",
+      "n_violations_detected": 1,
+      "ground_truth_type": "mass_violation",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.11302972893185048,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.000300600503910919,
+          "max_residual_left": 0.000300600503910919,
+          "max_residual_right": 0.00028162660294292865,
+          "epsilon": 0.1,
+          "score": 0.00300600500904914
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.012343005059705585,
+          "mean_abs_residual": 0.08917378369340169,
+          "epsilon": 0.05,
+          "score": 0.24686009625690977
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.000300600503910919,
+          "negative_fraction": 0.015,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.00012323776072046633,
+          "epsilon": 0.01,
+          "score": 0.01232377483966915
+        }
+      },
+      "baseline_confidence": 0.0144,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_013": {
+      "overall_pass": false,
+      "violation_score": 0.631427,
+      "predicted_violation_type": "mass_violation",
+      "n_violations_detected": 1,
+      "ground_truth_type": "mass_violation",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.12002428662853257,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.00026114680553872564,
+          "max_residual_left": 0.00026114680553872564,
+          "max_residual_right": 0.00023135617712458583,
+          "epsilon": 0.1,
+          "score": 0.002611468029272576
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.014996096736483328,
+          "mean_abs_residual": 0.09831600798829922,
+          "epsilon": 0.05,
+          "score": 0.29992192873122797
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.00026114680553872564,
+          "negative_fraction": 0.01625,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.00011740788493983084,
+          "epsilon": 0.01,
+          "score": 0.011740787319904352
+        }
+      },
+      "baseline_confidence": 0.0323,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_014": {
+      "overall_pass": false,
+      "violation_score": 0.620974,
+      "predicted_violation_type": "mass_violation",
+      "n_violations_detected": 1,
+      "ground_truth_type": "mass_violation",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.08674173669713017,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.0003477407012338771,
+          "max_residual_left": 0.00021796877292006082,
+          "max_residual_right": 0.0003477407012338771,
+          "epsilon": 0.1,
+          "score": 0.003477406977564701
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.009730364113051422,
+          "mean_abs_residual": 0.07778265659792077,
+          "epsilon": 0.05,
+          "score": 0.19460727836888286
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.00025471221182079364,
+          "negative_fraction": 0.01640625,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.00011651521592539942,
+          "epsilon": 0.01,
+          "score": 0.0116515204273879
+        }
+      },
+      "baseline_confidence": 0.0,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_015": {
+      "overall_pass": false,
+      "violation_score": 0.630154,
+      "predicted_violation_type": "mass_violation",
+      "n_violations_detected": 1,
+      "ground_truth_type": "mass_violation",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.10018928592270768,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.0002575750233042043,
+          "max_residual_left": 0.0002575750233042043,
+          "max_residual_right": 0.00023897774453230086,
+          "epsilon": 0.1,
+          "score": 0.0025757502072845406
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.014355405436444802,
+          "mean_abs_residual": 0.09523337728852646,
+          "epsilon": 0.05,
+          "score": 0.28710810298673395
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.0002575750233042043,
+          "negative_fraction": 0.01578125,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.00011858281276932966,
+          "epsilon": 0.01,
+          "score": 0.011858280091104957
+        }
+      },
+      "baseline_confidence": 0.0,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_016": {
+      "overall_pass": false,
+      "violation_score": 1.0,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 5,
+      "ground_truth_type": "bc_drift",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": true,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.15661525613414126,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": true,
+          "max_residual": 0.29676130338638357,
+          "max_residual_left": 0.2019596331659838,
+          "max_residual_right": 0.29676130338638357,
+          "epsilon": 0.1,
+          "score": 1.0
+        },
+        "pde_residual": {
+          "violation": true,
+          "mean_squared_residual": 0.10038919911552334,
+          "mean_abs_residual": 0.2021403121360805,
+          "epsilon": 0.05,
+          "score": 1.0
+        },
+        "positivity": {
+          "violation": true,
+          "min_value": -0.2019596331659838,
+          "negative_fraction": 0.0553125,
+          "epsilon": -0.01,
+          "score": 1.0
+        },
+        "symmetry": {
+          "violation": true,
+          "symmetry_error": 0.03185687057459249,
+          "epsilon": 0.01,
+          "score": 1.0
+        }
+      },
+      "baseline_confidence": 1.0,
+      "baseline_flags": {
+        "mass": false,
+        "bc": true,
+        "positivity": true,
+        "pde": false
+      }
+    },
+    "output_017": {
+      "overall_pass": false,
+      "violation_score": 0.981761,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 4,
+      "ground_truth_type": "bc_drift",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": true,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.08732645588894394,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": true,
+          "max_residual": 0.1658628354029005,
+          "max_residual_left": 0.11281401243296514,
+          "max_residual_right": 0.1658628354029005,
+          "epsilon": 0.1,
+          "score": 1.0
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.04088052607329064,
+          "mean_abs_residual": 0.13921432568614822,
+          "epsilon": 0.05,
+          "score": 0.8176105051136027
+        },
+        "positivity": {
+          "violation": true,
+          "min_value": -0.11281401243296514,
+          "negative_fraction": 0.03859375,
+          "epsilon": -0.01,
+          "score": 1.0
+        },
+        "symmetry": {
+          "violation": true,
+          "symmetry_error": 0.017812875006692406,
+          "epsilon": 0.01,
+          "score": 1.0
+        }
+      },
+      "baseline_confidence": 0.9564,
+      "baseline_flags": {
+        "mass": false,
+        "bc": true,
+        "positivity": true,
+        "pde": false
+      }
+    },
+    "output_018": {
+      "overall_pass": false,
+      "violation_score": 1.0,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 5,
+      "ground_truth_type": "bc_drift",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": true,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.1341596237884602,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": true,
+          "max_residual": 0.2544224117145214,
+          "max_residual_left": 0.17326553382974952,
+          "max_residual_right": 0.2544224117145214,
+          "epsilon": 0.1,
+          "score": 1.0
+        },
+        "pde_residual": {
+          "violation": true,
+          "mean_squared_residual": 0.08330358463974846,
+          "mean_abs_residual": 0.18920167210642488,
+          "epsilon": 0.05,
+          "score": 1.0
+        },
+        "positivity": {
+          "violation": true,
+          "min_value": -0.17326553382974952,
+          "negative_fraction": 0.050625,
+          "epsilon": -0.01,
+          "score": 1.0
+        },
+        "symmetry": {
+          "violation": true,
+          "symmetry_error": 0.027319759435330875,
+          "epsilon": 0.01,
+          "score": 1.0
+        }
+      },
+      "baseline_confidence": 1.0,
+      "baseline_flags": {
+        "mass": false,
+        "bc": true,
+        "positivity": true,
+        "pde": false
+      }
+    },
+    "output_019": {
+      "overall_pass": false,
+      "violation_score": 0.991239,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 4,
+      "ground_truth_type": "bc_drift",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": true,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.09578437224347092,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": true,
+          "max_residual": 0.1816607046474776,
+          "max_residual_left": 0.12372646232105167,
+          "max_residual_right": 0.1816607046474776,
+          "epsilon": 0.1,
+          "score": 1.0
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.0456196079672908,
+          "mean_abs_residual": 0.15004582388061785,
+          "epsilon": 0.05,
+          "score": 0.9123921410979732
+        },
+        "positivity": {
+          "violation": true,
+          "min_value": -0.12372646232105167,
+          "negative_fraction": 0.04125,
+          "epsilon": -0.01,
+          "score": 1.0
+        },
+        "symmetry": {
+          "violation": true,
+          "symmetry_error": 0.019522296784996684,
+          "epsilon": 0.01,
+          "score": 1.0
+        }
+      },
+      "baseline_confidence": 1.0,
+      "baseline_flags": {
+        "mass": false,
+        "bc": true,
+        "positivity": true,
+        "pde": false
+      }
+    },
+    "output_020": {
+      "overall_pass": false,
+      "violation_score": 0.971977,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 4,
+      "ground_truth_type": "bc_drift",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": true,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.08943171376203721,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": true,
+          "max_residual": 0.1696347580256133,
+          "max_residual_left": 0.11560308735098662,
+          "max_residual_right": 0.1696347580256133,
+          "epsilon": 0.1,
+          "score": 1.0
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.03598828094933641,
+          "mean_abs_residual": 0.12736406778079357,
+          "epsilon": 0.05,
+          "score": 0.7197656045914161
+        },
+        "positivity": {
+          "violation": true,
+          "min_value": -0.11560308735098662,
+          "negative_fraction": 0.03921875,
+          "epsilon": -0.01,
+          "score": 1.0
+        },
+        "symmetry": {
+          "violation": true,
+          "symmetry_error": 0.018228932057411443,
+          "epsilon": 0.01,
+          "score": 1.0
+        }
+      },
+      "baseline_confidence": 1.0,
+      "baseline_flags": {
+        "mass": false,
+        "bc": true,
+        "positivity": true,
+        "pde": false
+      }
+    },
+    "output_021": {
+      "overall_pass": false,
+      "violation_score": 1.0,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 5,
+      "ground_truth_type": "bc_drift",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": true,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.12406463957987095,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": true,
+          "max_residual": 0.23553835710547516,
+          "max_residual_left": 0.1600072818619991,
+          "max_residual_right": 0.23553835710547516,
+          "epsilon": 0.1,
+          "score": 1.0
+        },
+        "pde_residual": {
+          "violation": true,
+          "mean_squared_residual": 0.0677276607007376,
+          "mean_abs_residual": 0.17593423769642044,
+          "epsilon": 0.05,
+          "score": 1.0
+        },
+        "positivity": {
+          "violation": true,
+          "min_value": -0.1600072818619991,
+          "negative_fraction": 0.0475,
+          "epsilon": -0.01,
+          "score": 1.0
+        },
+        "symmetry": {
+          "violation": true,
+          "symmetry_error": 0.025267064835404685,
+          "epsilon": 0.01,
+          "score": 1.0
+        }
+      },
+      "baseline_confidence": 0.9855,
+      "baseline_flags": {
+        "mass": false,
+        "bc": true,
+        "positivity": true,
+        "pde": false
+      }
+    },
+    "output_022": {
+      "overall_pass": false,
+      "violation_score": 1.0,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 5,
+      "ground_truth_type": "bc_drift",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": true,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.12022295009447197,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": true,
+          "max_residual": 0.22804242514374168,
+          "max_residual_left": 0.15525742102726,
+          "max_residual_right": 0.22804242514374168,
+          "epsilon": 0.1,
+          "score": 1.0
+        },
+        "pde_residual": {
+          "violation": true,
+          "mean_squared_residual": 0.06827755970463949,
+          "mean_abs_residual": 0.1753194275635607,
+          "epsilon": 0.05,
+          "score": 1.0
+        },
+        "positivity": {
+          "violation": true,
+          "min_value": -0.15525742102726,
+          "negative_fraction": 0.0465625,
+          "epsilon": -0.01,
+          "score": 1.0
+        },
+        "symmetry": {
+          "violation": true,
+          "symmetry_error": 0.024487180877499078,
+          "epsilon": 0.01,
+          "score": 1.0
+        }
+      },
+      "baseline_confidence": 1.0,
+      "baseline_flags": {
+        "mass": false,
+        "bc": true,
+        "positivity": true,
+        "pde": false
+      }
+    },
+    "output_023": {
+      "overall_pass": false,
+      "violation_score": 0.995038,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 4,
+      "ground_truth_type": "bc_drift",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": true,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.09906697043331143,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": true,
+          "max_residual": 0.1881395557713143,
+          "max_residual_left": 0.12803865413579282,
+          "max_residual_right": 0.1881395557713143,
+          "epsilon": 0.1,
+          "score": 1.0
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.04751897932301213,
+          "mean_abs_residual": 0.1512280453674946,
+          "epsilon": 0.05,
+          "score": 0.9503795674526512
+        },
+        "positivity": {
+          "violation": true,
+          "min_value": -0.12803865413579282,
+          "negative_fraction": 0.0421875,
+          "epsilon": -0.01,
+          "score": 1.0
+        },
+        "symmetry": {
+          "violation": true,
+          "symmetry_error": 0.02019098094865762,
+          "epsilon": 0.01,
+          "score": 1.0
+        }
+      },
+      "baseline_confidence": 1.0,
+      "baseline_flags": {
+        "mass": false,
+        "bc": true,
+        "positivity": true,
+        "pde": false
+      }
+    },
+    "output_024": {
+      "overall_pass": false,
+      "violation_score": 0.701376,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 2,
+      "ground_truth_type": "pde_residual",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.7847208035750528,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.0002624102003539158,
+          "max_residual_left": 0.0002624102003539158,
+          "max_residual_right": 0.00020332925883274135,
+          "epsilon": 0.1,
+          "score": 0.002624101977298138
+        },
+        "pde_residual": {
+          "violation": true,
+          "mean_squared_residual": 0.23209402310618635,
+          "mean_abs_residual": 0.35495371569566125,
+          "epsilon": 0.05,
+          "score": 1.0
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.0002624102003539158,
+          "negative_fraction": 0.01390625,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.00011139028301122684,
+          "epsilon": 0.01,
+          "score": 0.011139027187219966
+        }
+      },
+      "baseline_confidence": 0.0278,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_025": {
+      "overall_pass": false,
+      "violation_score": 0.701443,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 2,
+      "ground_truth_type": "pde_residual",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.9309704108768239,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.0003029021056786427,
+          "max_residual_left": 0.0003029021056786427,
+          "max_residual_right": 0.00025441167710117684,
+          "epsilon": 0.1,
+          "score": 0.003029021026496217
+        },
+        "pde_residual": {
+          "violation": true,
+          "mean_squared_residual": 0.4631007436183118,
+          "mean_abs_residual": 0.46195568553883687,
+          "epsilon": 0.05,
+          "score": 1.0
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.0003029021056786427,
+          "negative_fraction": 0.01375,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.00011400648891585295,
+          "epsilon": 0.01,
+          "score": 0.01140064775152052
+        }
+      },
+      "baseline_confidence": 0.0,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_026": {
+      "overall_pass": false,
+      "violation_score": 0.701476,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 2,
+      "ground_truth_type": "pde_residual",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.8574983492222158,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.00035579356889501587,
+          "max_residual_left": 0.00035579356889501587,
+          "max_residual_right": 0.00024145823110253433,
+          "epsilon": 0.1,
+          "score": 0.003557935653370802
+        },
+        "pde_residual": {
+          "violation": true,
+          "mean_squared_residual": 0.31998817410396824,
+          "mean_abs_residual": 0.41086400115284727,
+          "epsilon": 0.05,
+          "score": 1.0
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.00024145823110253433,
+          "negative_fraction": 0.015625,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.00011203077438998444,
+          "epsilon": 0.01,
+          "score": 0.011203076318690813
+        }
+      },
+      "baseline_confidence": 0.0,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_027": {
+      "overall_pass": false,
+      "violation_score": 0.701382,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 2,
+      "ground_truth_type": "pde_residual",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.9587617111441143,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.00026699501493480796,
+          "max_residual_left": 0.00023809933804842847,
+          "max_residual_right": 0.00026699501493480796,
+          "epsilon": 0.1,
+          "score": 0.0026699501226485783
+        },
+        "pde_residual": {
+          "violation": true,
+          "mean_squared_residual": 0.5538524800767496,
+          "mean_abs_residual": 0.476660507899483,
+          "epsilon": 0.05,
+          "score": 1.0
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.00024555041435066796,
+          "negative_fraction": 0.015,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.00011153170886770172,
+          "epsilon": 0.01,
+          "score": 0.011153169771453196
+        }
+      },
+      "baseline_confidence": 0.0,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_028": {
+      "overall_pass": false,
+      "violation_score": 0.701437,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 2,
+      "ground_truth_type": "pde_residual",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.9485659681744804,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.00028568928536026634,
+          "max_residual_left": 0.0002600121152032893,
+          "max_residual_right": 0.00028568928536026634,
+          "epsilon": 0.1,
+          "score": 0.002856892825033735
+        },
+        "pde_residual": {
+          "violation": true,
+          "mean_squared_residual": 0.5172615076353135,
+          "mean_abs_residual": 0.4674543225921478,
+          "epsilon": 0.05,
+          "score": 1.0
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.00028568928536026634,
+          "negative_fraction": 0.01578125,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.00011514653128540839,
+          "epsilon": 0.01,
+          "score": 0.011514651977075642
+        }
+      },
+      "baseline_confidence": 0.0,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_029": {
+      "overall_pass": false,
+      "violation_score": 0.701451,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 2,
+      "ground_truth_type": "pde_residual",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.7861477861698525,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.0003081615541788439,
+          "max_residual_left": 0.0003081615541788439,
+          "max_residual_right": 0.0002441048339468846,
+          "epsilon": 0.1,
+          "score": 0.003081615510972284
+        },
+        "pde_residual": {
+          "violation": true,
+          "mean_squared_residual": 0.23736915424559007,
+          "mean_abs_residual": 0.3717176992028759,
+          "epsilon": 0.05,
+          "score": 1.0
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.0002497740252701352,
+          "negative_fraction": 0.01421875,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.00011428627044223126,
+          "epsilon": 0.01,
+          "score": 0.011428625901360536
+        }
+      },
+      "baseline_confidence": 0.0183,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_030": {
+      "overall_pass": false,
+      "violation_score": 0.701358,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 2,
+      "ground_truth_type": "pde_residual",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.938615664039002,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.0002683317068187372,
+          "max_residual_left": 0.0002683317068187372,
+          "max_residual_right": 0.0002150671229558525,
+          "epsilon": 0.1,
+          "score": 0.0026833170413542015
+        },
+        "pde_residual": {
+          "violation": true,
+          "mean_squared_residual": 0.4993395035631938,
+          "mean_abs_residual": 0.46470994775313557,
+          "epsilon": 0.05,
+          "score": 1.0
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.0002683317068187372,
+          "negative_fraction": 0.0159375,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.00010897739993562254,
+          "epsilon": 0.01,
+          "score": 0.010897738903788364
+        }
+      },
+      "baseline_confidence": 0.0245,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_031": {
+      "overall_pass": false,
+      "violation_score": 0.701439,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 2,
+      "ground_truth_type": "pde_residual",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.9584007365302724,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.00030695205562494805,
+          "max_residual_left": 0.00030695205562494805,
+          "max_residual_right": 0.00025061390764291125,
+          "epsilon": 0.1,
+          "score": 0.003069520525554275
+        },
+        "pde_residual": {
+          "violation": true,
+          "mean_squared_residual": 0.5604741211587554,
+          "mean_abs_residual": 0.48317453695692847,
+          "epsilon": 0.05,
+          "score": 1.0
+        },
+        "positivity": {
+          "violation": false,
+          "min_value": -0.00027838446383656243,
+          "negative_fraction": 0.015625,
+          "epsilon": -0.01,
+          "score": 0.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.00011315940976979685,
+          "epsilon": 0.01,
+          "score": 0.011315939845385701
+        }
+      },
+      "baseline_confidence": 0.0468,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_032": {
+      "overall_pass": false,
+      "violation_score": 0.819004,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 3,
+      "ground_truth_type": "positivity",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": true,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.5736247808059591,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": true,
+          "max_residual": 0.136342262688513,
+          "max_residual_left": 0.136342262688513,
+          "max_residual_right": 0.13633605444982433,
+          "epsilon": 0.1,
+          "score": 1.0
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.008950397553101059,
+          "mean_abs_residual": 0.07477263883567402,
+          "epsilon": 0.05,
+          "score": 0.17900794748186222
+        },
+        "positivity": {
+          "violation": true,
+          "min_value": -0.136342262688513,
+          "negative_fraction": 0.1628125,
+          "epsilon": -0.01,
+          "score": 1.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.00011035098044519094,
+          "epsilon": 0.01,
+          "score": 0.0110350969410094
+        }
+      },
+      "baseline_confidence": 0.9826,
+      "baseline_flags": {
+        "mass": false,
+        "bc": true,
+        "positivity": true,
+        "pde": false
+      }
+    },
+    "output_033": {
+      "overall_pass": false,
+      "violation_score": 0.816877,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 3,
+      "ground_truth_type": "positivity",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": true,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.530937192377513,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": true,
+          "max_residual": 0.1261396814373723,
+          "max_residual_left": 0.1261396814373723,
+          "max_residual_right": 0.1261371010597877,
+          "epsilon": 0.1,
+          "score": 1.0
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.007877513954004328,
+          "mean_abs_residual": 0.0730560959716788,
+          "epsilon": 0.05,
+          "score": 0.15755027592908102
+        },
+        "positivity": {
+          "violation": true,
+          "min_value": -0.1261396814373723,
+          "negative_fraction": 0.1509375,
+          "epsilon": -0.01,
+          "score": 1.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.00011217986923293503,
+          "epsilon": 0.01,
+          "score": 0.011217985801494924
+        }
+      },
+      "baseline_confidence": 0.987,
+      "baseline_flags": {
+        "mass": false,
+        "bc": true,
+        "positivity": true,
+        "pde": false
+      }
+    },
+    "output_034": {
+      "overall_pass": false,
+      "violation_score": 0.758432,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 2,
+      "ground_truth_type": "positivity",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": false,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.2845313863284446,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": false,
+          "max_residual": 0.06773631451806006,
+          "max_residual_left": 0.06773631451806006,
+          "max_residual_right": 0.0676465258393781,
+          "epsilon": 0.1,
+          "score": 0.6773631384069692
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.010911358220698459,
+          "mean_abs_residual": 0.08535508313261168,
+          "epsilon": 0.05,
+          "score": 0.21822716004942597
+        },
+        "positivity": {
+          "violation": true,
+          "min_value": -0.06773631451806006,
+          "negative_fraction": 0.08765625,
+          "epsilon": -0.01,
+          "score": 0.6773631451806006
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.00011366262459160184,
+          "epsilon": 0.01,
+          "score": 0.011366261322534052
+        }
+      },
+      "baseline_confidence": 0.0,
+      "baseline_flags": {
+        "mass": false,
+        "bc": false,
+        "positivity": false,
+        "pde": false
+      }
+    },
+    "output_035": {
+      "overall_pass": false,
+      "violation_score": 0.81947,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 3,
+      "ground_truth_type": "positivity",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": true,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.46500973852538335,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": true,
+          "max_residual": 0.11054984237663684,
+          "max_residual_left": 0.11054984237663684,
+          "max_residual_right": 0.11050147751047854,
+          "epsilon": 0.1,
+          "score": 1.0
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.009163185516039079,
+          "mean_abs_residual": 0.07760065180053044,
+          "epsilon": 0.05,
+          "score": 0.18326370665550742
+        },
+        "positivity": {
+          "violation": true,
+          "min_value": -0.11054984237663684,
+          "negative_fraction": 0.134375,
+          "epsilon": -0.01,
+          "score": 1.0
+        },
+        "symmetry": {
+          "violation": false,
+          "symmetry_error": 0.0001143828892074017,
+          "epsilon": 0.01,
+          "score": 0.011438287776911393
+        }
+      },
+      "baseline_confidence": 0.9689,
+      "baseline_flags": {
+        "mass": false,
+        "bc": true,
+        "positivity": true,
+        "pde": false
+      }
+    },
+    "output_036": {
+      "overall_pass": false,
+      "violation_score": 1.0,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 5,
+      "ground_truth_type": "compound",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": true,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.21500669248932494,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": true,
+          "max_residual": 0.2476936383078293,
+          "max_residual_left": 0.16849715073853877,
+          "max_residual_right": 0.2476936383078293,
+          "epsilon": 0.1,
+          "score": 1.0
+        },
+        "pde_residual": {
+          "violation": true,
+          "mean_squared_residual": 0.07951783620044103,
+          "mean_abs_residual": 0.19457893211651142,
+          "epsilon": 0.05,
+          "score": 1.0
+        },
+        "positivity": {
+          "violation": true,
+          "min_value": -0.16849715073853877,
+          "negative_fraction": 0.0471875,
+          "epsilon": -0.01,
+          "score": 1.0
+        },
+        "symmetry": {
+          "violation": true,
+          "symmetry_error": 0.026594783916053428,
+          "epsilon": 0.01,
+          "score": 1.0
+        }
+      },
+      "baseline_confidence": 0.963,
+      "baseline_flags": {
+        "mass": false,
+        "bc": true,
+        "positivity": true,
+        "pde": false
+      }
+    },
+    "output_037": {
+      "overall_pass": false,
+      "violation_score": 0.981541,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 4,
+      "ground_truth_type": "compound",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": true,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.2268599030922952,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": true,
+          "max_residual": 0.15374350197211195,
+          "max_residual_left": 0.10465492350936809,
+          "max_residual_right": 0.15374350197211195,
+          "epsilon": 0.1,
+          "score": 1.0
+        },
+        "pde_residual": {
+          "violation": false,
+          "mean_squared_residual": 0.0407706313048644,
+          "mean_abs_residual": 0.1544178980375282,
+          "epsilon": 0.05,
+          "score": 0.8154126097890357
+        },
+        "positivity": {
+          "violation": true,
+          "min_value": -0.10465492350936809,
+          "negative_fraction": 0.03359375,
+          "epsilon": -0.01,
+          "score": 1.0
+        },
+        "symmetry": {
+          "violation": true,
+          "symmetry_error": 0.01649614646346296,
+          "epsilon": 0.01,
+          "score": 1.0
+        }
+      },
+      "baseline_confidence": 0.9976,
+      "baseline_flags": {
+        "mass": false,
+        "bc": true,
+        "positivity": true,
+        "pde": false
+      }
+    },
+    "output_038": {
+      "overall_pass": false,
+      "violation_score": 1.0,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 5,
+      "ground_truth_type": "compound",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": true,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.24510573737752878,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": true,
+          "max_residual": 0.2142362645438164,
+          "max_residual_left": 0.1457203056044955,
+          "max_residual_right": 0.2142362645438164,
+          "epsilon": 0.1,
+          "score": 1.0
+        },
+        "pde_residual": {
+          "violation": true,
+          "mean_squared_residual": 0.0579071160997133,
+          "mean_abs_residual": 0.1755824199206185,
+          "epsilon": 0.05,
+          "score": 1.0
+        },
+        "positivity": {
+          "violation": true,
+          "min_value": -0.1457203056044955,
+          "negative_fraction": 0.043125,
+          "epsilon": -0.01,
+          "score": 1.0
+        },
+        "symmetry": {
+          "violation": true,
+          "symmetry_error": 0.022992332737879977,
+          "epsilon": 0.01,
+          "score": 1.0
+        }
+      },
+      "baseline_confidence": 0.9727,
+      "baseline_flags": {
+        "mass": false,
+        "bc": true,
+        "positivity": true,
+        "pde": false
+      }
+    },
+    "output_039": {
+      "overall_pass": false,
+      "violation_score": 1.0,
+      "predicted_violation_type": "compound",
+      "n_violations_detected": 5,
+      "ground_truth_type": "compound",
+      "ground_truth_violated": true,
+      "auditor_detected": true,
+      "baseline_detected": true,
+      "checks": {
+        "mass_conservation": {
+          "violation": true,
+          "max_relative_error": 0.23683520743725034,
+          "epsilon": 0.05,
+          "score": 1.0,
+          "method": "expected_decay"
+        },
+        "bc_drift": {
+          "violation": true,
+          "max_residual": 0.18829326030868687,
+          "max_residual_left": 0.1281956157032333,
+          "max_residual_right": 0.18829326030868687,
+          "epsilon": 0.1,
+          "score": 1.0
+        },
+        "pde_residual": {
+          "violation": true,
+          "mean_squared_residual": 0.051791708259292725,
+          "mean_abs_residual": 0.17015364807093072,
+          "epsilon": 0.05,
+          "score": 1.0
+        },
+        "positivity": {
+          "violation": true,
+          "min_value": -0.1281956157032333,
+          "negative_fraction": 0.03984375,
+          "epsilon": -0.01,
+          "score": 1.0
+        },
+        "symmetry": {
+          "violation": true,
+          "symmetry_error": 0.020222820193351275,
+          "epsilon": 0.01,
+          "score": 1.0
+        }
+      },
+      "baseline_confidence": 1.0,
+      "baseline_flags": {
+        "mass": false,
+        "bc": true,
+        "positivity": true,
+        "pde": false
+      }
+    }
+  }
+}

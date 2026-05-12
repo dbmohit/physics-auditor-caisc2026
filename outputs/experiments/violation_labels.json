@@ -1,0 +1,162 @@
+{
+  "output_000": {
+    "has_violation": false,
+    "violation_type": "none"
+  },
+  "output_001": {
+    "has_violation": false,
+    "violation_type": "none"
+  },
+  "output_002": {
+    "has_violation": false,
+    "violation_type": "none"
+  },
+  "output_003": {
+    "has_violation": false,
+    "violation_type": "none"
+  },
+  "output_004": {
+    "has_violation": false,
+    "violation_type": "none"
+  },
+  "output_005": {
+    "has_violation": false,
+    "violation_type": "none"
+  },
+  "output_006": {
+    "has_violation": false,
+    "violation_type": "none"
+  },
+  "output_007": {
+    "has_violation": false,
+    "violation_type": "none"
+  },
+  "output_008": {
+    "has_violation": true,
+    "violation_type": "mass_violation"
+  },
+  "output_009": {
+    "has_violation": true,
+    "violation_type": "mass_violation"
+  },
+  "output_010": {
+    "has_violation": true,
+    "violation_type": "mass_violation"
+  },
+  "output_011": {
+    "has_violation": true,
+    "violation_type": "mass_violation"
+  },
+  "output_012": {
+    "has_violation": true,
+    "violation_type": "mass_violation"
+  },
+  "output_013": {
+    "has_violation": true,
+    "violation_type": "mass_violation"
+  },
+  "output_014": {
+    "has_violation": true,
+    "violation_type": "mass_violation"
+  },
+  "output_015": {
+    "has_violation": true,
+    "violation_type": "mass_violation"
+  },
+  "output_016": {
+    "has_violation": true,
+    "violation_type": "bc_drift"
+  },
+  "output_017": {
+    "has_violation": true,
+    "violation_type": "bc_drift"
+  },
+  "output_018": {
+    "has_violation": true,
+    "violation_type": "bc_drift"
+  },
+  "output_019": {
+    "has_violation": true,
+    "violation_type": "bc_drift"
+  },
+  "output_020": {
+    "has_violation": true,
+    "violation_type": "bc_drift"
+  },
+  "output_021": {
+    "has_violation": true,
+    "violation_type": "bc_drift"
+  },
+  "output_022": {
+    "has_violation": true,
+    "violation_type": "bc_drift"
+  },
+  "output_023": {
+    "has_violation": true,
+    "violation_type": "bc_drift"
+  },
+  "output_024": {
+    "has_violation": true,
+    "violation_type": "pde_residual"
+  },
+  "output_025": {
+    "has_violation": true,
+    "violation_type": "pde_residual"
+  },
+  "output_026": {
+    "has_violation": true,
+    "violation_type": "pde_residual"
+  },
+  "output_027": {
+    "has_violation": true,
+    "violation_type": "pde_residual"
+  },
+  "output_028": {
+    "has_violation": true,
+    "violation_type": "pde_residual"
+  },
+  "output_029": {
+    "has_violation": true,
+    "violation_type": "pde_residual"
+  },
+  "output_030": {
+    "has_violation": true,
+    "violation_type": "pde_residual"
+  },
+  "output_031": {
+    "has_violation": true,
+    "violation_type": "pde_residual"
+  },
+  "output_032": {
+    "has_violation": true,
+    "violation_type": "positivity"
+  },
+  "output_033": {
+    "has_violation": true,
+    "violation_type": "positivity"
+  },
+  "output_034": {
+    "has_violation": true,
+    "violation_type": "positivity"
+  },
+  "output_035": {
+    "has_violation": true,
+    "violation_type": "positivity"
+  },
+  "output_036": {
+    "has_violation": true,
+    "violation_type": "compound"
+  },
+  "output_037": {
+    "has_violation": true,
+    "violation_type": "compound"
+  },
+  "output_038": {
+    "has_violation": true,
+    "violation_type": "compound"
+  },
+  "output_039": {
+    "has_violation": true,
+    "violation_type": "compound"
+  }
+}

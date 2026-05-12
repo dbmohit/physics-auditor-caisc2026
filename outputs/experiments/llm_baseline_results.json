@@ -1,0 +1,522 @@
+{
+  "output_000": {
+    "detected": false,
+    "confidence": 0.0274,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": false,
+    "ground_truth_type": "none"
+  },
+  "output_001": {
+    "detected": false,
+    "confidence": 0.0,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": false,
+    "ground_truth_type": "none"
+  },
+  "output_002": {
+    "detected": false,
+    "confidence": 0.0359,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": false,
+    "ground_truth_type": "none"
+  },
+  "output_003": {
+    "detected": false,
+    "confidence": 0.0197,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": false,
+    "ground_truth_type": "none"
+  },
+  "output_004": {
+    "detected": false,
+    "confidence": 0.0,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": false,
+    "ground_truth_type": "none"
+  },
+  "output_005": {
+    "detected": false,
+    "confidence": 0.0476,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": false,
+    "ground_truth_type": "none"
+  },
+  "output_006": {
+    "detected": false,
+    "confidence": 0.0261,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": false,
+    "ground_truth_type": "none"
+  },
+  "output_007": {
+    "detected": false,
+    "confidence": 0.0286,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": false,
+    "ground_truth_type": "none"
+  },
+  "output_008": {
+    "detected": false,
+    "confidence": 0.0,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "mass_violation"
+  },
+  "output_009": {
+    "detected": false,
+    "confidence": 0.0,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "mass_violation"
+  },
+  "output_010": {
+    "detected": false,
+    "confidence": 0.0,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "mass_violation"
+  },
+  "output_011": {
+    "detected": false,
+    "confidence": 0.0427,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "mass_violation"
+  },
+  "output_012": {
+    "detected": false,
+    "confidence": 0.0144,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "mass_violation"
+  },
+  "output_013": {
+    "detected": false,
+    "confidence": 0.0323,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "mass_violation"
+  },
+  "output_014": {
+    "detected": false,
+    "confidence": 0.0,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "mass_violation"
+  },
+  "output_015": {
+    "detected": false,
+    "confidence": 0.0,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "mass_violation"
+  },
+  "output_016": {
+    "detected": true,
+    "confidence": 1.0,
+    "reason": "Boundary values at t=1: u(0,1)=-0.0001, u(1,1)=0.2968 \u2014 expected 0.0 (BC violated). min(u) = -0.2020 \u2014 concentration is negative, which is physically inadmissible.",
+    "flags": {
+      "mass": false,
+      "bc": true,
+      "positivity": true,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "bc_drift"
+  },
+  "output_017": {
+    "detected": true,
+    "confidence": 0.9564,
+    "reason": "Boundary values at t=1: u(0,1)=0.0000, u(1,1)=0.1659 \u2014 expected 0.0 (BC violated). min(u) = -0.1128 \u2014 concentration is negative, which is physically inadmissible.",
+    "flags": {
+      "mass": false,
+      "bc": true,
+      "positivity": true,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "bc_drift"
+  },
+  "output_018": {
+    "detected": true,
+    "confidence": 1.0,
+    "reason": "Boundary values at t=1: u(0,1)=-0.0001, u(1,1)=0.2544 \u2014 expected 0.0 (BC violated). min(u) = -0.1733 \u2014 concentration is negative, which is physically inadmissible.",
+    "flags": {
+      "mass": false,
+      "bc": true,
+      "positivity": true,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "bc_drift"
+  },
+  "output_019": {
+    "detected": true,
+    "confidence": 1.0,
+    "reason": "Boundary values at t=1: u(0,1)=0.0002, u(1,1)=0.1817 \u2014 expected 0.0 (BC violated). min(u) = -0.1237 \u2014 concentration is negative, which is physically inadmissible.",
+    "flags": {
+      "mass": false,
+      "bc": true,
+      "positivity": true,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "bc_drift"
+  },
+  "output_020": {
+    "detected": true,
+    "confidence": 1.0,
+    "reason": "Boundary values at t=1: u(0,1)=0.0000, u(1,1)=0.1696 \u2014 expected 0.0 (BC violated). min(u) = -0.1156 \u2014 concentration is negative, which is physically inadmissible.",
+    "flags": {
+      "mass": false,
+      "bc": true,
+      "positivity": true,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "bc_drift"
+  },
+  "output_021": {
+    "detected": true,
+    "confidence": 0.9855,
+    "reason": "Boundary values at t=1: u(0,1)=0.0001, u(1,1)=0.2355 \u2014 expected 0.0 (BC violated). min(u) = -0.1600 \u2014 concentration is negative, which is physically inadmissible.",
+    "flags": {
+      "mass": false,
+      "bc": true,
+      "positivity": true,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "bc_drift"
+  },
+  "output_022": {
+    "detected": true,
+    "confidence": 1.0,
+    "reason": "Boundary values at t=1: u(0,1)=0.0001, u(1,1)=0.2280 \u2014 expected 0.0 (BC violated). min(u) = -0.1553 \u2014 concentration is negative, which is physically inadmissible.",
+    "flags": {
+      "mass": false,
+      "bc": true,
+      "positivity": true,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "bc_drift"
+  },
+  "output_023": {
+    "detected": true,
+    "confidence": 1.0,
+    "reason": "Boundary values at t=1: u(0,1)=-0.0000, u(1,1)=0.1881 \u2014 expected 0.0 (BC violated). min(u) = -0.1280 \u2014 concentration is negative, which is physically inadmissible.",
+    "flags": {
+      "mass": false,
+      "bc": true,
+      "positivity": true,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "bc_drift"
+  },
+  "output_024": {
+    "detected": false,
+    "confidence": 0.0278,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "pde_residual"
+  },
+  "output_025": {
+    "detected": false,
+    "confidence": 0.0,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "pde_residual"
+  },
+  "output_026": {
+    "detected": false,
+    "confidence": 0.0,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "pde_residual"
+  },
+  "output_027": {
+    "detected": false,
+    "confidence": 0.0,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "pde_residual"
+  },
+  "output_028": {
+    "detected": false,
+    "confidence": 0.0,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "pde_residual"
+  },
+  "output_029": {
+    "detected": false,
+    "confidence": 0.0183,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "pde_residual"
+  },
+  "output_030": {
+    "detected": false,
+    "confidence": 0.0245,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "pde_residual"
+  },
+  "output_031": {
+    "detected": false,
+    "confidence": 0.0468,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "pde_residual"
+  },
+  "output_032": {
+    "detected": true,
+    "confidence": 0.9826,
+    "reason": "Boundary values at t=1: u(0,1)=-0.1362, u(1,1)=-0.1362 \u2014 expected 0.0 (BC violated). min(u) = -0.1363 \u2014 concentration is negative, which is physically inadmissible.",
+    "flags": {
+      "mass": false,
+      "bc": true,
+      "positivity": true,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "positivity"
+  },
+  "output_033": {
+    "detected": true,
+    "confidence": 0.987,
+    "reason": "Boundary values at t=1: u(0,1)=-0.1259, u(1,1)=-0.1260 \u2014 expected 0.0 (BC violated). min(u) = -0.1261 \u2014 concentration is negative, which is physically inadmissible.",
+    "flags": {
+      "mass": false,
+      "bc": true,
+      "positivity": true,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "positivity"
+  },
+  "output_034": {
+    "detected": false,
+    "confidence": 0.0,
+    "reason": "No violations detected. Solution appears physically consistent.",
+    "flags": {
+      "mass": false,
+      "bc": false,
+      "positivity": false,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "positivity"
+  },
+  "output_035": {
+    "detected": true,
+    "confidence": 0.9689,
+    "reason": "Boundary values at t=1: u(0,1)=-0.1103, u(1,1)=-0.1103 \u2014 expected 0.0 (BC violated). min(u) = -0.1105 \u2014 concentration is negative, which is physically inadmissible.",
+    "flags": {
+      "mass": false,
+      "bc": true,
+      "positivity": true,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "positivity"
+  },
+  "output_036": {
+    "detected": true,
+    "confidence": 0.963,
+    "reason": "Boundary values at t=1: u(0,1)=0.0000, u(1,1)=0.2477 \u2014 expected 0.0 (BC violated). min(u) = -0.1685 \u2014 concentration is negative, which is physically inadmissible.",
+    "flags": {
+      "mass": false,
+      "bc": true,
+      "positivity": true,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "compound"
+  },
+  "output_037": {
+    "detected": true,
+    "confidence": 0.9976,
+    "reason": "Boundary values at t=1: u(0,1)=0.0000, u(1,1)=0.1537 \u2014 expected 0.0 (BC violated). min(u) = -0.1047 \u2014 concentration is negative, which is physically inadmissible.",
+    "flags": {
+      "mass": false,
+      "bc": true,
+      "positivity": true,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "compound"
+  },
+  "output_038": {
+    "detected": true,
+    "confidence": 0.9727,
+    "reason": "Boundary values at t=1: u(0,1)=-0.0001, u(1,1)=0.2142 \u2014 expected 0.0 (BC violated). min(u) = -0.1457 \u2014 concentration is negative, which is physically inadmissible.",
+    "flags": {
+      "mass": false,
+      "bc": true,
+      "positivity": true,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "compound"
+  },
+  "output_039": {
+    "detected": true,
+    "confidence": 1.0,
+    "reason": "Boundary values at t=1: u(0,1)=0.0001, u(1,1)=0.1883 \u2014 expected 0.0 (BC violated). min(u) = -0.1282 \u2014 concentration is negative, which is physically inadmissible.",
+    "flags": {
+      "mass": false,
+      "bc": true,
+      "positivity": true,
+      "pde": false
+    },
+    "ground_truth_violated": true,
+    "ground_truth_type": "compound"
+  }
+}
